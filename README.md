@@ -29,8 +29,8 @@ ELASTICSEARCH_SERVER_USERNAME=""
 ELASTICSEARCH_SERVER_PASSWORD=""
 
 # Axios HTTP setting info
-HTTP_TIMEOUT=15000
-HTTP_MAX_REDIRECTS=5
+HTTP_TIMEOUT=
+HTTP_MAX_REDIRECTS=
 
 # Backend api access key
 #
@@ -68,6 +68,43 @@ SERVER_STOP_KEY=""
 ALLOWED_NO_AUTHORIZATION_HEADER_CHECK_URL=""
 ALLOWED_NO_AUTHORIZATION_HEADER_URLS=""
 ```
+
+### Forentend ENV ('.env')
+```env
+# Webtoon board backend api host setter
+# "local" : 개발 서버
+# "public" : 실 서버
+NEXT_PUBLIC_WBF_USE_BACK_ADDRESS=""
+# Webtoon board backend api host [DEV]
+NEXT_PUBLIC_WEBTOON_BOARD_BACKEND_API_HOST=""
+# Webtoon board backend api host [PRODUCTION]
+NEXT_PUBLIC_WEBTOON_BOARD_BACKEND_API_HOST_PRODUCTION=""
+
+# Backend api access key
+#
+#
+# This key is required when accessing Backend from Frontend.
+#
+# Restrict client access through this key.
+# ** WARNING: The key must have the same key for both Backend and Frontend.
+# ** For the above reasons, the key should never be released to the outside world. **      
+BACKEND_API_ACCESS_KEY=""
+
+# Login cookie aes secret key
+#
+# 
+# This key is the encryption key for the integrity of the login in Frontend.
+# 
+# Restrict client access through this key.
+# ** WARNING: The key must have the same key for both Backend and Frontend.
+# ** For the above reasons, the key should never be released to the outside world. **          
+LOGIN_COOKIE_AES_SECRET_KEY=""
+
+# Server stop key
+SERVER_STOP_KEY=""
+```
+
+### Management server ENV
 
 ## Wbebtoon Board BackendAPI Server
 
