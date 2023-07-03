@@ -104,7 +104,84 @@ LOGIN_COOKIE_AES_SECRET_KEY=""
 SERVER_STOP_KEY=""
 ```
 
-### Management server ENV
+### Management server ENV ('webtoon-board-management-server/wbm_src/util/auth/auth_info.py')
+```python
+from typing import Final
+
+# Github token
+GITHUB_TOKEN: Final = ""
+
+# Database connection info
+DATABASE_HOST: Final = ""
+DATABASE_PORT: Final = 
+DATABASE_ID: Final = ""
+DATABASE_PASSWORD: Final = ""
+DATABASE_NAME: Final = ""
+
+# BACKEND SERVER Stop key
+SERVER_STOP_KEY: Final = ""
+```
+
+### Comment analyzer ENV ('config.yaml')
+```yaml
+webtoon_board_comment_analyzer:
+    #
+    # Elasticsearch 서버의 사용자 인증 정보
+    #
+    elasticsearch_credentials:
+        scheme:
+        host:
+        port:
+        username:
+        password:
+
+    #
+    # MariaDB 서버의 사용자 인증 정보
+    #
+    mariadb_credentials:
+        host:
+        port:
+        database:
+        username:
+        password:
+
+    #
+    # Github API 서버의 사용자 인증 키
+    #
+    github_credentials:
+        token:
+
+    #
+    # Backend API 서버의 인증 키
+    #
+    backend_api_server_credentials:
+        url:
+        access_key:
+
+    #
+    # 한국어 감정 분석 keras 모델 폴더 경로
+    #
+    ksa_keras_model:
+        target:
+
+
+    #
+    # 종료 메시지 리스트
+    #
+    exit_message:
+        - 'Bye.'
+        - 'See you again.'
+        - 'Goodbye.'
+        - 'Have a nice day.'
+        - 'See you later.'
+        - 'See you soon.'
+        - 'See you tomorrow.'
+        - 'See you next time.'
+        - 'See you in a bit.'
+        - 'See you in a while.'
+        - 'See you in a moment.'
+        - 'See you in a few minutes.'
+```
 
 ## Wbebtoon Board BackendAPI Server
 
