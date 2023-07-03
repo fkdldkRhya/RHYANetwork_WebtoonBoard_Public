@@ -6,6 +6,69 @@ RHYA.Network WebtoonBoard Project
 ## 개발 현황
 https://docs.google.com/spreadsheets/d/1-KMWENciZqUc4pnORCpT-AEBdD_EhtQcHqLmGnskyCM/edit?usp=sharing
 
+## Repo 정보
+해당 Repo는 Public 전용 Repo 이기 때문에 .env 파일 이나 기타 인증 정보 파일은 제거 하였습니다. 
+### Backend ENV ('.env.dev', '.env.prod')
+```env
+# Database connection info
+DATABASE_HOST=""
+DATABASE_PORT=
+DATABASE_USERNAME=""
+DATABASE_PASSWORD=""
+DATABASE_NAME=""
+
+# Root email account info
+ROOT_EMAIL_SMTP_SERVER_HOST=""
+ROOT_EMAIL_SMTP_SERVER_PORT=
+ROOT_EMAIL_ACCOUNT_ID=""
+ROOT_EMAIL_ACCOUNT_PASSWORD=""
+
+# Elasticsearch server info
+ELASTICSEARCH_SERVER_URL=""
+ELASTICSEARCH_SERVER_USERNAME=""
+ELASTICSEARCH_SERVER_PASSWORD=""
+
+# Axios HTTP setting info
+HTTP_TIMEOUT=15000
+HTTP_MAX_REDIRECTS=5
+
+# Backend api access key
+#
+#
+# This key is required when accessing Backend from Frontend.
+#
+# Restrict client access through this key.
+# ** WARNING: The key must have the same key for both Backend and Frontend.
+# ** For the above reasons, the key should never be released to the outside world. **      
+BACKEND_API_ACCESS_KEY=""
+
+# Login cookie aes secret key
+#
+# 
+# This key is the encryption key for the integrity of the login in Frontend.
+# 
+# Restrict client access through this key.
+# ** WARNING: The key must have the same key for both Backend and Frontend.
+# ** For the above reasons, the key should never be released to the outside world. **          
+LOGIN_COOKIE_AES_SECRET_KEY=""
+
+# Backe end cookie aes secret key
+#
+#
+# This is the key that Backend uses to encrypt cookie data.
+#
+# ** WARNING: The key should never be released to the outside world.
+DEFAULT_COOKIE_AES_SECRET_KEY=""
+
+# Server stop key
+SERVER_STOP_KEY=""
+
+# No api key authorization header allow path
+# All lowercase letters are required
+ALLOWED_NO_AUTHORIZATION_HEADER_CHECK_URL=""
+ALLOWED_NO_AUTHORIZATION_HEADER_URLS=""
+```
+
 ## Wbebtoon Board BackendAPI Server
 
 ### 개발 규칙
