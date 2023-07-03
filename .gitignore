@@ -1,0 +1,10 @@
+#
+# Removing Env files and credential files
+#
+
+# Remove auth_info.py file
+webtoon-board-management-server/wbm_src/util/auth/auth_info.py
+# Remvoe config.yaml file
+webtoon-board-comment-analyzer/config.yaml
+# Remove .env file
+*.env

@@ -1,0 +1,17 @@
+name: WebtoonBoard Deploy
+
+on:
+  push:
+    branches:
+      - 'publish'
+
+jobs:
+  run:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run script file
+      run: |
+         curl -v -L  -X GET -H 'Accept: application/json' -H 'Authorization: 7QTT2XZ3d309S0ZsHg43T94PtObXQdI9GPoRwqoE8EtS7ff2BxCS5EbJlifyMf3vplRE3I9icJvDeSfdE9DUnPlBvN2ZmA5Z9ShnrmwYMZzPCY3iuDS8LPCgXyHDrO0z' 'https://webtoon-board-admin.rhya-network.kro.kr/git_pull_request'
+      shell: bash
+      

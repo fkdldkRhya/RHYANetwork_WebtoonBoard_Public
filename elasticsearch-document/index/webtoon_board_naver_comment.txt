@@ -1,0 +1,113 @@
+#
+# 네이버 웹툰 댓글 저장 Index 설정
+#
+PUT /webtoon_board_naver_comment
+{
+  "settings": {
+    "number_of_shards": 2,
+    "number_of_replicas": 1,
+    "index": {
+      "analysis": {
+        "tokenizer": {
+          "nori_tokenizer_mixed": {
+            "type": "nori_tokenizer",
+            "decompound_mode": "mixed"
+          }
+        },
+        "analyzer": {
+          "korean": {
+            "type": "custom",
+            "tokenizer": "nori_tokenizer_mixed",
+            "filter": [
+              "nori_readingform",
+              "lowercase"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "webtoon_id": {
+        "type": "integer"
+      },
+      "comment_id": {
+        "type": "integer",
+        "index": false
+      },
+      "article": {
+        "type": "integer"
+      },
+      "best": {
+        "type": "boolean",
+        "null_value": false
+      },
+      "write_date": {
+        "type": "date"
+      },
+      "profile_user_id": {
+        "type": "keyword"
+      },
+      "masked_user_id": {
+        "type": "keyword"
+      },
+      "masked_user_name": {
+        "type": "keyword"
+      },
+      "user_name": {
+        "type": "keyword"
+      },
+      "comment_text": {
+        "type": "text",
+        "analyzer": "korean"
+      },
+      "comment_double": {
+        "type": "double"
+      },
+      "comment_result": {
+        "type": "boolean",
+        "null_value": false
+      }
+    }
+  }
+}
+
+#
+# 해당 인덱스의 1번 데이터 조회
+#
+GET /webtoon_board_naver_comment/_doc/1
+
+#
+# 해당 인덱스에서 comment_text 필드에 "어"가 포함된 데이터 조회
+#
+GET webtoon_board_naver_comment/_search
+{
+  "query": {
+    "match": {
+      "comment_text": {
+        "query": "어",
+        "operator": "and"
+      }
+    }
+  }
+}
+
+#
+# 테스트 데이터 삽입
+#
+PUT webtoon_board_naver_comment/_doc/1
+{
+  "webtoon_id": 808269,
+  "comment_id": 454690553,
+  "article": 1,
+  "best": true,
+  "write_date": "2023-05-23T10:54:31+0900",
+  "profile_user_id": "ji0552908",
+  "masked_user_id": "j055**",
+  "masked_user_name": "최시***",
+  "user_name": "최시훈",
+  "comment_text": "싫어!",
+  "comment_double": 10.38,
+  "comment_result": false
+}
