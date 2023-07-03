@@ -69,7 +69,7 @@ ALLOWED_NO_AUTHORIZATION_HEADER_CHECK_URL=""
 ALLOWED_NO_AUTHORIZATION_HEADER_URLS=""
 ```
 
-### Forentend ENV ('.env')
+### Froentend ENV ('.env')
 ```env
 # Webtoon board backend api host setter
 # "local" : 개발 서버
