@@ -67,15 +67,6 @@ def main():
         log_manager.get_logger().error("Backend api server is not alive.")
         sys.exit(1)
 
-    with get_elasticsearch_client(config_data) as es_client:
-        es_client.delete_by_query(
-            index="webtoon_board_naver_comment",
-            query={
-                "match": {
-                    "webtoon_id": 808269,
-                }
-            }
-        )
     # Check elasticsearch connection
     with get_elasticsearch_client(config_data) as es_client:
         log_manager.get_logger().info("Checking elasticsearch connection...")
